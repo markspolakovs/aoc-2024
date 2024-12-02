@@ -21,7 +21,7 @@ std::pair<std::vector<int>, std::vector<int>> read_input(std::string path) {
 }
 
 int main(int argc, char* argv[]) {
-  if (argc == 0) {
+  if (argc == 1) {
     std::fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
     return 1;
   }
