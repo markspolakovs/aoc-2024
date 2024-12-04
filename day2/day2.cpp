@@ -2,6 +2,8 @@
 #include <fstream>
 #include <sstream>
 
+#include "aoc.h"
+
 template <typename T> int sgn(T val) {
     return (T(0) < val) - (val < T(0));
 }
@@ -79,14 +81,12 @@ void solve_part2(char* input) {
   std::printf("safe: %d\n", total_safe);
 }
 
-int main(int argc, char* argv[]) {
-  if (argc == 1) {
-    std::fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
-    return 1;
+void solve(char* input) {
+  if (PART == 1) {
+    solve_part1(input);
+  } else {
+    solve_part2(input);
   }
-
-  // solve_part1(argv[1]);
-  solve_part2(argv[1]);
-
-  return 0;
 }
+
+AOC(solve)

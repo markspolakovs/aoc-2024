@@ -1,11 +1,14 @@
 #include <cstdio>
 #include <fstream>
-#include <regex>
 #include <iostream>
+#include <regex>
 
-void solve_part1(char* path) {
+#include "aoc.h"
+
+void solve_part1(char *path) {
   std::ifstream fd(path);
-  std::string content((std::istreambuf_iterator<char>(fd)), std::istreambuf_iterator<char>());
+  std::string content((std::istreambuf_iterator<char>(fd)),
+                      std::istreambuf_iterator<char>());
   std::regex mul_re("mul\\(([0-9]+),([0-9]+)\\)");
 
   std::sregex_iterator it(content.begin(), content.end(), mul_re);
@@ -21,9 +24,10 @@ void solve_part1(char* path) {
   std::printf("sum: %d\n", sum);
 }
 
-void solve_part2(char* path) {
+void solve_part2(char *path) {
   std::ifstream fd(path);
-  std::string content((std::istreambuf_iterator<char>(fd)), std::istreambuf_iterator<char>());
+  std::string content((std::istreambuf_iterator<char>(fd)),
+                      std::istreambuf_iterator<char>());
   std::regex mul_re("(?:do\\(\\)|don't\\(\\)|mul\\(([0-9]+),([0-9]+)\\))");
 
   std::sregex_iterator it(content.begin(), content.end(), mul_re);
@@ -46,19 +50,12 @@ void solve_part2(char* path) {
   std::printf("sum: %d\n", sum);
 }
 
-constexpr int part = 2;
-
-int main(int argc, char* argv[]) {
-  if (argc == 1) {
-    std::fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
-    return 1;
-  }
-
-  if (part == 1) {
-    solve_part1(argv[1]);
+void solve(char *input) {
+  if (PART == 1) {
+    solve_part1(input);
   } else {
-    solve_part2(argv[1]);
+    solve_part2(input);
   }
-
-  return 0;
 }
+
+AOC(solve)

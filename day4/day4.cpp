@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <fstream>
 
-constexpr int part = 2;
+#include "aoc.h"
 
 constexpr auto XMAS = "XMAS";
 
@@ -58,7 +58,7 @@ void solve(char *input_path) {
   }
 
   auto xmas = 0;
-  if (part == 1) {
+  if (PART == 1) {
     for (auto x = 0; x < grid.size(); x++) {
       for (auto y = 0; y < grid.size(); y++) {
         if (grid[x][y] == 'X') {
@@ -86,15 +86,4 @@ void solve(char *input_path) {
   printf("xmas: %d\n", xmas);
 }
 
-void solve_part2(char *input_path) {}
-
-int main(int argc, char *argv[]) {
-  if (argc == 1) {
-    std::fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
-    return 1;
-  }
-
-  solve(argv[1]);
-
-  return 0;
-}
+AOC(solve)
