@@ -1,5 +1,4 @@
 #pragma once
-#include <functional>
 
 typedef void (*aoc_real_main)(char *);
 
