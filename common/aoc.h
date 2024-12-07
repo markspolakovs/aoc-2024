@@ -1,5 +1,9 @@
 #pragma once
 
+#include <cstdio>
+#include <utility>
+#include <string>
+
 typedef void (*aoc_real_main)(char *);
 
 int PART;
