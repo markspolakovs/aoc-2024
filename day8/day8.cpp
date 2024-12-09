@@ -32,10 +32,6 @@ Puzzle parse(char *input_path) {
   return puzzle;
 }
 
-int distance(Coord a, Coord b) {
-  return abs(a.first - b.first) + abs(a.second - b.second);
-}
-
 void print(Puzzle &puzzle, std::set<Coord> &antinodes) {
   for (auto y = 0; y < puzzle.size; y++) {
     for (auto x = 0; x < puzzle.size; x++) {
